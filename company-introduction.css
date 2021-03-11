@@ -1,0 +1,82 @@
+body {
+    color: #3f0b03;     /* 文字色指定 */
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: 
+      linear-gradient(140deg, 
+        #e6b3e7a0, 
+        #f1edee60 40%, 
+        #caa8a860 60%, 
+        #f0cee7a0), 
+      url("http://www.dogspace1.org/diary/img/img978_DSC00693.jpg");
+    background-repeat: no-repeat;
+    background-position: 50%;
+    animation: move 20s infinite both;
+  }
+  
+  @keyframes move{
+    0% {
+      background-size:100% auto;
+    }
+    50% {
+      background-size:140% auto;
+    }
+    100% {
+      background-size:100% auto;
+    }
+  }
+}
+li {
+    list-style-type: square;
+    margin: 10px;
+    color: rgb(79, 79, 82);
+  }
+  /* 桜を表示するコンテナのスタイル */
+.cherry-blossom-container {
+    position: relative;
+    height: 100vh; /* コンテナの高さ */
+    width: 100%; /* コンテナの横幅 */
+    overflow: hidden; /* コンテナからはみ出した要素を隠す */
+  }
+  
+  /* 桜の花びらのスタイル */
+  .petal {
+    position: absolute;
+    background-color: #ffc0cb; /* 花びらの色 */
+    border-radius: 150% 0 150% 0;
+    animation: animate-petal 10s linear;
+  }
+  
+  .petal::after {
+    content: "";
+    position: absolute;
+    top: -14%;
+    left: -10%;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #ffc0cb;
+    border-radius: 150% 0 150% 0;
+    transform: rotate(15deg);
+  }
+  
+  /* 花びらが降るアニメーション */
+  @keyframes animate-petal {
+    0% {
+      top: 0;
+      opacity: 0;
+      transform: rotate(0deg);
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      top: 100vh;
+      transform: rotate(3000deg);
+    }
+  }
